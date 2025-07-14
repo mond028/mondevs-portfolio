@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reymond | Portfolio</title>
+    <meta name="description" content="Professional portfolio of Reymond, Front-End Developer specializing in modern web technologies.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <span>Mondevs</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg id="theme-toggle-dark-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
+                
+                <button id="mobile-menu-button" class="theme-toggle hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu container">
+            <div class="flex flex-col py-4">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content animate-fadeIn">
+                <h1 class="hero-title">Hi, I'm <span class="text-accent">Reymond</span></h1>
+                <p class="hero-description">
+                    I craft exceptional digital experiences with modern web technologies, focusing on performance, accessibility, and beautiful design.
+                </p>
+                <div class="flex justify-center gap-4 hero-buttons">
+                    <a href="#projects" class="btn btn-primary animate-pulse">
+                        <i class="fas fa-laptop-code mr-2"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center">About <span class="text-accent">Me</span></h2>
+            <p class="section-subtitle text-center">
+                Get to know more about my skills, experience, and what I can bring to your project
+            </p>
+            
+            <div class="about-container">
+                <div class="about-image-container">
+                    <img src="Formal.png" alt="Reymond" class="about-image">
+                    <div class="about-image-frame"></div>
+                </div>
+                
+                <div class="about-content">
+                    <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+                    <div class="about-text">
+                        <p class="mb-4">
+                            I'm a passionate front-end developer with over 5 years of experience creating responsive and user-friendly web applications. 
+                            I specialize in modern JavaScript frameworks and have a strong focus on creating accessible, performant, and visually appealing interfaces.
+                        </p>
+                        <p>
+                            My journey in web development started when I was in college, and since then I've had the privilege of working with amazing teams and clients to bring their digital visions to life. I'm constantly learning and staying up-to-date with the latest web technologies and best practices.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">My <span class="text-accent">Skills</span></h3>
+                    
+                    <div class="skills-container">
+                        <span class="skill"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill"><i class="fab fa-js"></i> JavaScript</span>
+                        
+                        <span class="skill"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                        <span class="skill"><i class="fas fa-universal-access"></i> Accessibility</span>
+                        <span class="skill"><i class="fas fa-bolt"></i> Performance</span>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-laptop-code mr-2"></i> My Projects
+                        </a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-file-download mr-2"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title text-center">My <span class="text-accent">Projects</span></h2>
+            <p class="section-subtitle text-center">
+                Here are some of my recent projects. Each one was carefully crafted to solve specific problems and deliver exceptional user experiences.
+            </p>
+            
+            <div class="projects-carousel">
+                <div class="projects-track" id="projects-track">
+                    <!-- Project 1 -->
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <img src="assets/images/img1.png" alt="Event Nexus Catering" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Event Nexus Catering</h3>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">Tailwind</span>
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                                <p class="project-description">
+                                    A comprehensive online catering reservation and management platform that allows customers to book events, customize menus, and process secure payments. Includes admin dashboards for order tracking and inventory management.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://nexuscatering.online/index.php" class="project-link" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i> Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <img src="assets/images/img2.png" alt="Prisville Triangle Resort" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Prisville Triangle Resort</h3>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">Tailwind</span>
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                                <p class="project-description">
+                                    An interactive resort booking website with room and cottage reservations, activity packages, online payments, and admin management for availability and schedules, enhancing guest experience and operational efficiency.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://prisville.online/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i> Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <img src="assets/images/img3.png" alt="Weslyn Pharmacy Store" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Weslyn Pharmacy Store</h3>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">Tailwind</span>
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                                <p class="project-description">
+                                    A pharmacy e-commerce platform for browsing and purchasing medicines and health products online. Features include user authentication, prescription uploads, inventory tracking, and order processing with secure checkout.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://weslynpharmacy.store/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i> Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <img src="assets/images/img4.png" alt="Ordering System" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Ordering System</h3>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">Tailwind</span>
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                                <p class="project-description">
+                                    A full-featured restaurant ordering system supporting online menu browsing, table or delivery orders, real-time kitchen updates, and secure payment integration. Designed to streamline operations and improve customer service.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://alfrescorestaurant.site/home.php" class="project-link" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i> Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="prev-project" aria-label="Previous project">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" id="next-project" aria-label="Next project">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-dots" id="carousel-dots">
+                    <!-- Dots will be added dynamically by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center">Get In <span class="text-accent">Touch</span></h2>
+            <p class="section-subtitle text-center">
+                Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+            </p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" class="form-input" placeholder="Tell me about your project" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn">
+                    <i class="fas fa-paper-plane mr-2"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span class="text-accent">Mondevs</span>
+                </a>
+                <p class="footer-text">
+                    Creating digital experiences that are beautiful, functional, and accessible. Let's build something amazing together!
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Codepen">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; <span id="year"></span> Reymond Cordero. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+ 
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

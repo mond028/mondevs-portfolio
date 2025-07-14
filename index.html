@@ -11,7 +11,164 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Additional styles for new components */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
         
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .testimonials-carousel {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .testimonial {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 0 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            left: -0.5rem;
+            top: -1rem;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .testimonial-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-title {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .skills-chart {
+            margin-top: 2rem;
+        }
+        
+        .skill-meter {
+            margin-top: 1rem;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background: var(--bg-secondary);
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .skill-bar::after {
+            content: attr(data-level);
+            position: absolute;
+            right: 0;
+            top: -25px;
+            font-weight: 600;
+        }
+        
+        .skill-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: var(--skill-level);
+            background: var(--accent);
+            border-radius: 5px;
+        }
+        
+        .skill-name {
+            position: absolute;
+            left: 0;
+            top: -25px;
+            font-weight: 600;
+        }
+        
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -26,7 +183,9 @@
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             
@@ -50,7 +209,9 @@
             <div class="flex flex-col py-4">
                 <a href="#home" class="mobile-nav-link">Home</a>
                 <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
                 <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
                 <a href="#contact" class="mobile-nav-link">Contact</a>
             </div>
         </div>
@@ -108,11 +269,35 @@
                         <span class="skill"><i class="fab fa-html5"></i> HTML5</span>
                         <span class="skill"><i class="fab fa-css3-alt"></i> CSS3</span>
                         <span class="skill"><i class="fab fa-js"></i> JavaScript</span>
-                        
+                        <span class="skill"><i class="fab fa-php"></i> PHP</span>
+                        <span class="skill"><i class="fas fa-database"></i> MySQL</span>
                         <span class="skill"><i class="fab fa-git-alt"></i> Git</span>
                         <span class="skill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
                         <span class="skill"><i class="fas fa-universal-access"></i> Accessibility</span>
                         <span class="skill"><i class="fas fa-bolt"></i> Performance</span>
+                    </div>
+                    
+                    <!-- Skills Chart -->
+                    <div class="skills-chart">
+                        <h4 class="text-xl font-semibold mb-4">Technical Proficiency</h4>
+                        <div class="skill-meter">
+                            <div class="skill-bar" data-skill="HTML/CSS" data-level="95">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="JavaScript" data-level="85">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="PHP" data-level="80">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="MySQL" data-level="75">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="flex gap-4 mt-8">
@@ -128,6 +313,62 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="bg-primary">
+        <div class="container">
+            <h2 class="section-title text-center">My <span class="text-accent">Services</span></h2>
+            <p class="section-subtitle text-center">
+                Here's what I can offer to help bring your digital vision to life
+            </p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Custom, responsive websites built with clean, maintainable code using modern technologies like HTML5, CSS3, JavaScript, and PHP.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">
+                        Websites that look and function perfectly on all devices, from desktop to mobile, ensuring optimal user experience.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-Commerce Solutions</h3>
+                    <p class="service-description">
+                        Custom online stores with secure payment processing, inventory management, and user-friendly interfaces.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="service-title">Database Integration</h3>
+                    <p class="service-description">
+                        Secure and efficient database solutions with MySQL for dynamic content management and data processing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -136,10 +377,18 @@
                 Here are some of my recent projects. Each one was carefully crafted to solve specific problems and deliver exceptional user experiences.
             </p>
             
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="booking">Booking Systems</button>
+                <button class="filter-btn" data-filter="cms">Content Management</button>
+            </div>
+            
             <div class="projects-carousel">
                 <div class="projects-track" id="projects-track">
                     <!-- Project 1 -->
-                    <div class="project-slide">
+                    <div class="project-slide" data-category="booking">
                         <div class="project-card">
                             <img src="assets/images/img1.png" alt="Event Nexus Catering" class="project-image">
                             <div class="project-content">
@@ -167,7 +416,7 @@
                     </div>
                     
                     <!-- Project 2 -->
-                    <div class="project-slide">
+                    <div class="project-slide" data-category="booking">
                         <div class="project-card">
                             <img src="assets/images/img2.png" alt="Prisville Triangle Resort" class="project-image">
                             <div class="project-content">
@@ -195,7 +444,7 @@
                     </div>
                     
                     <!-- Project 3 -->
-                    <div class="project-slide">
+                    <div class="project-slide" data-category="ecommerce">
                         <div class="project-card">
                             <img src="assets/images/img3.png" alt="Weslyn Pharmacy Store" class="project-image">
                             <div class="project-content">
@@ -223,7 +472,7 @@
                     </div>
                     
                     <!-- Project 4 -->
-                    <div class="project-slide">
+                    <div class="project-slide" data-category="cms">
                         <div class="project-card">
                             <img src="assets/images/img4.png" alt="Ordering System" class="project-image">
                             <div class="project-content">
@@ -267,8 +516,52 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center">Client <span class="text-accent">Testimonials</span></h2>
+            <p class="section-subtitle text-center">
+                What people say about working with me
+            </p>
+            
+            <div class="testimonials-carousel">
+                <!-- Testimonial 1 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "Reymond delivered our catering website ahead of schedule with all requested features. His attention to detail and communication throughout the project were exceptional."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/client1.jpg" alt="Client" class="testimonial-image">
+                            <div>
+                                <h4 class="author-name">Sarah Johnson</h4>
+                                <p class="author-title">Owner, Event Nexus Catering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "The resort booking system Reymond created has streamlined our operations and increased bookings by 30%. Highly recommend his services!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/client2.jpg" alt="Client" class="testimonial-image">
+                            <div>
+                                <h4 class="author-name">Michael Tan</h4>
+                                <p class="author-title">Manager, Prisville Triangle Resort</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="bg-secondary">
+    <section id="contact" class="bg-primary">
         <div class="container">
             <h2 class="section-title text-center">Get In <span class="text-accent">Touch</span></h2>
             <p class="section-subtitle text-center">
@@ -283,6 +576,29 @@
                 <div class="form-group">
                     <label for="email" class="form-label">Your Email</label>
                     <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="budget" class="form-label">Project Budget</label>
+                    <select id="budget" class="form-input">
+                        <option value="">Select budget range</option>
+                        <option value="1-5k">$1,000 - $5,000</option>
+                        <option value="5-10k">$5,000 - $10,000</option>
+                        <option value="10k+">$10,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="services" class="form-label">Services Needed</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="web-dev"> Web Development
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="ecommerce"> E-Commerce
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services" value="database"> Database Integration
+                        </label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="message" class="form-label">Your Message</label>
@@ -336,7 +652,59 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
- 
     <script src="assets/js/script.js"></script>
+    <script>
+        // Additional JavaScript for new features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize skill bars
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const level = bar.getAttribute('data-level');
+                bar.style.setProperty('--skill-level', `${level}%`);
+            });
+            
+            // Project filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectSlides = document.querySelectorAll('.project-slide');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter projects
+                    projectSlides.forEach(slide => {
+                        if (filterValue === 'all' || slide.getAttribute('data-category') === filterValue) {
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Testimonial carousel (simple version)
+            const testimonials = document.querySelectorAll('.testimonial');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.style.display = i === index ? 'block' : 'none';
+                });
+            }
+            
+            // Initialize
+            showTestimonial(0);
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+        });
+    </script>
 </body>
 </html>

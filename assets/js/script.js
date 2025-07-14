@@ -149,7 +149,7 @@
             const nextBtn = document.getElementById('next-project');
             const dotsContainer = document.getElementById('carousel-dots');
             
-            let currentIndex = 5;
+            let currentIndex = 15;
             const slideCount = slides.length;
             
             // Create dots
@@ -163,7 +163,6 @@
             
             const dots = document.querySelectorAll('.carousel-dot');
             
-            // Update carousel position
             function updateCarousel() {
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
                 
@@ -301,10 +300,10 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCarousel();
         }
         
-        // Auto-rotate every 5 seconds
+     
         let autoRotate = setInterval(nextProject, 5000);
         
-        // Pause auto-rotation on hover
+
         carousel.parentElement.addEventListener('mouseenter', () => {
             clearInterval(autoRotate);
         });
@@ -313,7 +312,6 @@ document.addEventListener('DOMContentLoaded', function() {
             autoRotate = setInterval(nextProject, 5000);
         });
         
-        // Button controls
         nextBtn.addEventListener('click', () => {
             clearInterval(autoRotate);
             nextProject();
@@ -326,7 +324,6 @@ document.addEventListener('DOMContentLoaded', function() {
             autoRotate = setInterval(nextProject, 5000);
         });
         
-        // Indicator controls
         indicators.forEach(indicator => {
             indicator.addEventListener('click', () => {
                 clearInterval(autoRotate);
@@ -336,10 +333,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Initialize
         updateCarousel();
     });
-        // Prevent zoom on mobile devices when focusing inputs
+  
         document.addEventListener('DOMContentLoaded', function() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 document.querySelectorAll('input, textarea').forEach(element => {
